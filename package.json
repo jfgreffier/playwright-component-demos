@@ -1,0 +1,13 @@
+{
+  "name": "playwright-component-demos",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "playwright test -c playwright-ct.config.ts"
+  },
+  "author": "jfgreffier",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/experimental-ct-react": "^1.43.0",
+    "@types/node": "^20.12.7"
+  }
+}
