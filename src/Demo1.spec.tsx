@@ -1,22 +1,17 @@
-// import react-testing methods
-import { render, screen } from "@testing-library/react";
-// userEvent library simulates user interactions by dispatching the events that would happen if the interaction took place in a browser.
-import userEvent from "@testing-library/user-event";
-// add custom jest matchers from jest-dom
-import "@testing-library/jest-dom";
+// import playwright ct test methods
+import { expect, test } from "@playwright/experimental-ct-react";
 // the component to test
 import Fetch from "./fetch";
 
-test("loads and displays greeting", async () => {
-  // Render a React element into the DOM
-  render(<Fetch url="/greeting" />);
+test("loads and displays greeting", async ({ mount }) => {
+  // Render a React element
+  const component = await mount(<Fetch url="/greeting" />);
 
-  await userEvent.click(screen.getByText("Load Greeting"));
-  // wait before throwing an error if it cannot find an element
-  await screen.findByRole("heading");
+  await component.getByText("Load Greeting").click();
+  // no need to wait before throwing an error if it cannot find an element
 
   // assert that the alert message is correct using
-  // toHaveTextContent, a custom matcher from jest-dom.
-  expect(screen.getByRole("heading")).toHaveTextContent("hello there");
-  expect(screen.getByRole("button")).toBeDisabled();
+  // toHaveText, a matcher from Playwright.
+  await expect(component.getByRole("heading")).toHaveText("hello there");
+  await expect(component.getByRole("button")).toBeDisabled();
 });
