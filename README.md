@@ -4,6 +4,10 @@
 
 ## Demo 1 - First Playwright component test
 
+[Demo1.spec.tsx](./src/Demo1.spec.tsx)
+
+[Demo1-annotated.spec.tsx](./src/Demo1-annotated.spec.tsx)
+
 Very similar to [Testing Library example](https://testing-library.com/docs/react-testing-library/example-intro/#quickstart), it shows that you are probably familiar with Playwright !
 
 ## Demo 3 - Trace viewer
