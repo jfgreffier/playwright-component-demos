@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 function Fetch({ url }: { url: string }) {
   const [buttonClicked, setButtonClicked] = useState(false);
-  const [greeting, setGreeting] = useState("");
+  const [greeting, setGreeting] = useState('');
 
   const fetchGreeting = (url: string) => {
     setButtonClicked(true);
     const randomTime = Math.random() * 3000;
-    setTimeout(() => setGreeting("hello there"), randomTime)
+    setTimeout(() => setGreeting('hello there'), randomTime);
   };
 
   return (
