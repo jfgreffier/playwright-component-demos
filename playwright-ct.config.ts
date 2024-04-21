@@ -1,5 +1,7 @@
 import { defineConfig, devices } from '@playwright/experimental-ct-react';
 
+const viewport = { height: 300, width: 600 };
+
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
@@ -32,15 +34,15 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'], viewport },
     },
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      use: { ...devices['Desktop Firefox'], viewport },
     },
     {
       name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      use: { ...devices['Desktop Safari'], viewport },
     },
   ],
 });
