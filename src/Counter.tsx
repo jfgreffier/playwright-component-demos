@@ -9,7 +9,7 @@ function Counter() {
 
   return (
     <>
-      <span>count is {count}</span>
+      <div className="counter">count is {count}</div>
       <br />
       <button aria-label="increase" onClick={handleClick}>➕</button>
     </>
