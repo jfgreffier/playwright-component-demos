@@ -1,5 +1,8 @@
-import { expect, test } from '@playwright/experimental-ct-react';
+import { expect as playwrightExpect, test } from '@playwright/experimental-ct-react';
 import Counter from './Counter';
+
+// very short expect timeout, more confortable if you try TDD
+const expect = playwrightExpect.configure({ timeout: 1 });
 
 // Web-first assertions
 test('renders', async ({ mount }) => {
